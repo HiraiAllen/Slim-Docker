@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Build output
+/dist
+/build
+/public/js/bundle.js # El archivo generado por Webpack
+/public/js/*.map # Mapas de archivos generados
+
+# Composer
+/vendor/
+
+# PHPStorm
+.idea/
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Environment variables
+.env

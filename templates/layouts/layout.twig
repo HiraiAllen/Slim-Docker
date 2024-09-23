@@ -1,8 +1,12 @@
-{% extends "layouts.twig" %}
-
-{% block title %}Home{% endblock %}
-
-{% block content %}
-    <h2>Bienvenido, {{ name }}!</h2>
-    <p>Este es tu home usando Slim Framework con Twig.</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Slim App{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -20,6 +20,20 @@ $container->set('view', function () {
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 
+// Añade estos middleware para manejar rutas y errores
+$app->addRoutingMiddleware();
+$app->addErrorMiddleware(true, true, true);
+
+// Servir archivos estáticos de la carpeta public
+$app->get('/js/{file}', function (Request $request, Response $response, $args) {
+    $filePath = __DIR__ . '/../public/js/' . $args['file'];
+    if (file_exists($filePath)) {
+        return $response->withFile($filePath);
+    } else {
+        return $response->withStatus(404);
+    }
+});
+
 // Agregar middleware de Twig
 $app->add(TwigMiddleware::createFromContainer($app, 'view'));
 
